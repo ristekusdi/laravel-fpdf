@@ -9,8 +9,9 @@
     },
     "authors": [
         {
-            "name": "Anouar",
-            "email": "dtekind@gmail.com"
+            "name": "Riset dan Teknologi USDI",
+            "email": "usdi@unud.ac.id",
+            "homepage": "https://usdi.unud.ac.id"
         }
     ],
     "require": {
