@@ -77,8 +77,6 @@ var $PDFVersion;         // PDF version number
 *******************************************************************************/
 function __construct($orientation='P', $unit='mm', $size='A4')
 {
-	// Some checks
-	$this->_dochecks();
 	// Initialization of properties
 	$this->page = 0;
 	$this->n = 2;
@@ -1044,18 +1042,6 @@ function Output($name='', $dest='')
 *                              Protected methods                               *
 *                                                                              *
 *******************************************************************************/
-function _dochecks()
-{
-	// Check availability of %F
-	if(sprintf('%.1F',1.0)!='1.0')
-		$this->Error('This version of PHP is not supported');
-	// Check mbstring overloading
-	if(ini_get('mbstring.func_overload') & 2)
-		$this->Error('mbstring overloading must be disabled');
-	// Ensure runtime magic quotes are disabled
-	if(get_magic_quotes_runtime())
-		@set_magic_quotes_runtime(0);
-}
 
 function _checkoutput()
 {
