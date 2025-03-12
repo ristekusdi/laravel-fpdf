@@ -1,4 +1,6 @@
-<?php namespace Anouar\Fpdf\Facades;
+<?php 
+
+namespace Anouar\Fpdf\Facades;
 
 use Illuminate\Support\Facades\Facade;
  

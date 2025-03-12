@@ -1,4 +1,6 @@
-<?php namespace Anouar\Fpdf;
+<?php 
+
+namespace Anouar\Fpdf;
 /*******************************************************************************
 * FPDF                                                                         *
 *                                                                              *
