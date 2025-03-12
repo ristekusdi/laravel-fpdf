@@ -1,69 +1,52 @@
-If you're going to use this package with L4, make sure you include the laravel 4 version: 
-```js
+# Laravel FPDF
+
+> NOTE: This is a fork from Anouar/Fpdf project.
+
+The last fork from RistekUSDI for compatibility internal web app.
+
+> PLEASE DON'T USE THIS PACKAGE IN PRODUCTION! THIS IS A LAST FORK FROM RISTEKUSDI FOR COMPATIBILITY INTERNAL WEB APP!
+
+## How to run?
+
+1. Add `anouar/fpdf` into the `composer.json` file.
+
+```json
 "require": {
-    "anouar/fpdf": "1.0.1"
+        "anouar/fpdf": "dev-master"
 }
 ```
-##laravel-Fpdf
 
-Fpdf lets you generate PDF files. This package is the laravel package version of http://www.fpdf.org , for more information check this link http://www.fpdf.org/?lang=en 
+2. Set `repositories` key inside the `composer.json` file. E.g.
 
-##Donation :
-If you want to support us: <a href='https://pledgie.com/campaigns/27748'><img alt='Click here to lend your support to: github and make a donation at pledgie.com !' src='https://pledgie.com/campaigns/27748.png?skin_name=chrome' border='0' ></a>
+```json
+"require": {
 
-###Installation
-Add the following to your `composer.json` file:
-
-```js
+},
 "require-dev": {
-	"anouar/fpdf": "1.0.2"
+
+},
+"repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:ristekusdi/laravel-fpdf.git"
+        },
+]
+```
+
+3. Run `composer install` or `composer update`.
+
+## Usage
+
+This package has Laravel auto discovery feature. So, you just need to import the Facade class:
+
+```php
+use Anouar\Fpdf\Facades\Fpdf;
+
+function print()
+{
+   Fpdf::AddPage('P','A4');
+   Fpdf::SetFont('Times','B',9);
+   // etc
+   // etc
 }
 ```
-
-Next, run `composer install` to download it.
-
-Add the service provider to `app/config/app.php`, within the `providers` array.
-
-```php
-'providers' => array(
-	// ...
-
-	'Anouar\Fpdf\FpdfServiceProvider',
-)
-```
-
-Finally, add the alias to `app/config/app.php`, within the `aliases` array.
-
-```php
-'aliases' => array(
-	// ...
-
-	'Fpdf'	  => 'Anouar\Fpdf\Facades\Fpdf',
-)
-```
-
-##Example Code
-
-```php
-Route::get('pdf', function(){
-	$fpdf = new Fpdf();
-        $fpdf->AddPage();
-        $fpdf->SetFont('Arial','B',16);
-        $fpdf->Cell(40,10,'Hello World!');
-        $fpdf->Output();
-        exit;
-
-});
-```
-##OR
-
-```
-Route::get('pdf', function(){
-
-        Fpdf::AddPage();
-        Fpdf::SetFont('Arial','B',16);
-        Fpdf::Cell(40,10,'Hello World!');
-        Fpdf::Output();
-        exit;
-
-});
