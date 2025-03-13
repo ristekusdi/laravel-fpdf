@@ -5,6 +5,7 @@
 The last fork from RistekUSDI for compatibility internal web app.
 
 > PLEASE DON'T USE THIS PACKAGE IN PRODUCTION! THIS IS A LAST FORK FROM RISTEKUSDI FOR COMPATIBILITY INTERNAL WEB APP!
+> If you want to use Fpdf in Laravel project, then please use [codedge/laravel-fpdf](https://github.com/codedge/laravel-fpdf)
 
 ## How to run?
 
